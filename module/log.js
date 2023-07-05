@@ -53,6 +53,18 @@ export const getUsername = () => {
   }
 };
 
+export const handleAuth = () => {
+  const savedUsername = localStorage.getItem("username");
+  if (!savedUsername) {
+    openModal().then(() => {
+      getUsername();
+      closeModal();
+    });
+  } else {
+    getUsername();
+  }
+};
+
 export const saveTodos = () => {
   const savedUsername = localStorage.getItem("username");
   const storageKey = `${savedUsername}-todos`;
@@ -77,4 +89,6 @@ if (!localStorage.getItem("username")) {
 window.addEventListener("beforeunload", () => {
   saveTodos();
 });
+
 initTodos();
+handleAuth();
