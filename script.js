@@ -11,21 +11,17 @@ import addItem from "./module/addItem.js";
 import  renderTodos  from "./module/renderTodos.js";
 import { userDisplay } from "./module/accountName.js";
 
-
 const handleAuth = () => {
   const savedUsername = localStorage.getItem("username");
   if (!savedUsername) {
     openModal().then(() => {
       getUsername();
       closeModal();
-      initTodos();
-      renderTodos();
+      init();
     });
   } else {
     getUsername();
-    closeModal();
-    initTodos();
-    renderTodos();
+    init();
   }
 };
 
@@ -36,9 +32,6 @@ window.addEventListener("beforeunload", () => {
 });
 
 const  init = () => {
- 
-  getUsername();
-  openModal();
   initTodos();
   renderTodos();
 }
