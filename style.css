@@ -188,9 +188,11 @@ body {
     h1 {
         font-size: 20px;
     }
-body {
-    min-height: 100vh;
-}
+
+    body {
+        min-height: 100vh;
+    }
+
     .item-btn {
         padding: 5px;
         color: #eaeaea;
@@ -208,6 +210,20 @@ body {
     .toDoCompleted,
     .toDoAdded {
         width: 300px;
+        padding: 7px;
+        font-size: 12px;
+    }
+}
+
+@media all and (max-width:480px) {
+
+    .inputField {
+        width: 315px;
+    }
+
+    .toDoCompleted,
+    .toDoAdded {
+        width: 295px;
         padding: 7px;
         font-size: 12px;
     }
