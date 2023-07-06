@@ -1,8 +1,8 @@
 import renderTodos from "./renderTodos.js";
 import { userDisplay } from "./accountName.js";
 
-export const storageKey = `${localStorage.getItem("username")}-todos`;
-export let todos = JSON.parse(localStorage.getItem(storageKey)) || [];
+export let todos = [];
+export let storageKey = "";
 
 export const openModal = () => {
   const modal = document.querySelector("#modal");
@@ -34,14 +34,6 @@ export const getUsername = () => {
   const username = usernameInput?.value?.trim();
 
   if (username) {
-    const savedUsername = localStorage.getItem("username");
-
-    if (savedUsername && savedUsername !== username) {
-      localStorage.removeItem(`${savedUsername}-todos`);
-      todos = [];
-      saveTodos();
-    }
-
     localStorage.setItem("username", username);
     userDisplay.innerText = `Аккаунт: ${username}`;
     closeModal();
@@ -52,14 +44,10 @@ export const getUsername = () => {
     openModal();
   }
 };
-
 export const handleAuth = () => {
   const savedUsername = localStorage.getItem("username");
   if (!savedUsername) {
-    openModal().then(() => {
-      getUsername();
-      closeModal();
-    });
+    openModal();
   } else {
     getUsername();
   }
@@ -77,14 +65,6 @@ export const initTodos = () => {
   todos = JSON.parse(localStorage.getItem(storageKey)) || [];
 };
 
-if (!localStorage.getItem("username")) {
-  openModal().then(() => {
-    getUsername();
-    closeModal();
-  });
-} else {
-  getUsername();
-}
 
 window.addEventListener("beforeunload", () => {
   saveTodos();
