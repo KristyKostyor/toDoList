@@ -1,8 +1,8 @@
 import { todos, saveTodos, storageKey, initTodos } from "./log.js";
 
-const toDoContainer = document.querySelector(".toDoContainer");
+export const toDoContainer = document.querySelector(".toDoContainer");
 
-const renderTodos = () => {
+ export const renderTodos = () => {
   toDoContainer.innerHTML = "";
   for (let todo of todos) {
     const itemContainer = document.createElement("div");
@@ -50,4 +50,4 @@ const renderTodos = () => {
   }
 };
 
-export default renderTodos;
+

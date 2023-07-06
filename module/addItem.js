@@ -1,5 +1,5 @@
 import { todos, saveTodos } from "./log.js";
-import renderTodos from "./renderTodos.js";
+import { renderTodos, toDoContainer }from "./renderTodos.js";
 
 const inputField = document.querySelector(".inputField");
 const btn = document.querySelector(".btn");

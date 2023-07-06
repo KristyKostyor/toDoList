@@ -1,5 +1,6 @@
-import renderTodos from "./renderTodos.js";
+import { renderTodos, toDoContainer }from "./renderTodos.js";
 import { userDisplay } from "./accountName.js";
+import addItem from "./addItem.js";
 
 export let todos = [];
 export let storageKey = "";
@@ -7,26 +8,24 @@ export let storageKey = "";
 export const openModal = () => {
   const modal = document.querySelector("#modal");
   modal.style.display = "block";
-
   const continueBtn = document.querySelector(".continue-btn");
-
   const handleContinue = () => {
     getUsername();
     closeModal();
   };
-
   continueBtn?.addEventListener("click", handleContinue);
-
   document.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
       handleContinue();
     }
   });
+    toDoContainer.style.display = "none";
 };
 
 export const closeModal = () => {
   const modal = document.querySelector("#modal");
   modal.style.display = "none";
+    toDoContainer.style.display = "block";
 };
 
 export const getUsername = () => {
