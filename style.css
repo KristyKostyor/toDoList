@@ -58,7 +58,7 @@ body {
 
 .btn {
     padding: 15px;
-    color: #e0c596;
+    color: #bdbbb9;
     background: #0b083f;
     border: none;
     margin-left: 5px;
@@ -67,12 +67,11 @@ body {
 
 .item-btn {
     padding: 5px;
-    color: #e0c596;
+    color: #bdbbb9;
     background: #0b083f;
     border: none;
     margin-left: 5px;
     margin-top: 10px;
-
 }
 
 .toDoContainer {
@@ -142,12 +141,34 @@ body {
     }
 
     body {
-        min-height: 90vh;
+        min-height: 100vh;
     }
+
+    .toDoCompleted,
+    .toDoAdded {
+        width: 300px;
+        padding: 7px;
+        font-size: 10px;
+    }
+
+    .inputField {
+        width: 325px;
+    }
+
 }
 
 @media all and (max-width:500px) {
     h1 {
         font-size: 20px;
+    }
+
+    .item-btn {
+        padding: 5px;
+        color: #aeaeae;
+        background: #0b083f;
+        border: none;
+        margin-left: 5px;
+        margin-top: 10px;
+        font-size: 10px;
     }
 }
