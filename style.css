@@ -164,8 +164,8 @@ body {
 
     .item-btn {
         padding: 5px;
-        color: #aeaeae;
-        background: #0b083f;
+        color: #eaeaea;
+        background: rgba(16, 18, 23, 0.9);
         border: none;
         margin-left: 5px;
         margin-top: 10px;
