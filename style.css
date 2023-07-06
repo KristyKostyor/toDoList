@@ -21,6 +21,7 @@ body {
     background-color: #e0c596;
 }
 
+
 .header,
 .container,
 .item-container {
@@ -135,13 +136,21 @@ body {
 
 }
 
+
+@media all and (max-width:1000px) {
+    .inputField {
+        width: 653px;
+    }
+
+}
+
 @media all and (max-width:800px) {
     h1 {
         font-size: 40px;
     }
 
     body {
-        min-height: 100vh;
+        min-height: 80vh;
     }
 
     .toDoCompleted,
@@ -152,16 +161,36 @@ body {
     }
 
     .inputField {
-        width: 470px;
+        width: 525px;
     }
-
 }
 
-@media all and (max-width:500px) {
+@media all and (max-width:768px) {
+    .inputField {
+        width: 520px;
+    }
+}
+
+@media all and (max-width:700px) {
+    .inputField {
+        width: 455px;
+    }
+
+    .toDoCompleted,
+    .toDoAdded {
+        width: 405px;
+        padding: 7px;
+        font-size: 12px;
+    }
+}
+
+@media all and (max-width:560px) {
     h1 {
         font-size: 20px;
     }
-
+body {
+    min-height: 100vh;
+}
     .item-btn {
         padding: 5px;
         color: #eaeaea;
@@ -173,7 +202,7 @@ body {
     }
 
     .inputField {
-        width: 315px;
+        width: 345px;
     }
 
     .toDoCompleted,
