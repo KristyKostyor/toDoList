@@ -1,10 +1,11 @@
 import { todos, saveTodos } from "./log.js";
 import { renderTodos, toDoContainer }from "./renderTodos.js";
+import { editTodoItem } from "./editBtn.js";
 
 const inputField = document.querySelector(".inputField");
-const btn = document.querySelector(".btn");
+export const btn = document.querySelector(".btn");
 
-const addItem = () => {
+export const addItem = () => {
   if (inputField.value.trim() === "") {
     alert("Сначала введите задачу!");
     return;
@@ -41,4 +42,3 @@ inputField.addEventListener("input", () => {
   btn.disabled = inputField.value.trim() === "";
 });
 
-export default addItem;

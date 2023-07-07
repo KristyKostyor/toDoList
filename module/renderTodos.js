@@ -1,4 +1,6 @@
 import { todos, saveTodos, storageKey, initTodos } from "./log.js";
+import { editTodoItem } from "./editBtn.js";
+import { addItem, btn } from "./addItem.js";
 
 export const toDoContainer = document.querySelector(".toDoContainer");
 
@@ -14,14 +16,24 @@ export const toDoContainer = document.querySelector(".toDoContainer");
     if (todo.completed) item.classList.add("toDoCompleted");
 
     const completeBtn = document.createElement("button");
-    completeBtn.innerText = "Завершить";
+    completeBtn.innerText = "";
     completeBtn.classList.add("item-btn");
     if (todo.completed) completeBtn.style.display = "none";
 
     const deleteBtn = document.createElement("button");
-    deleteBtn.innerText = "Удалить";
-    deleteBtn.classList.add("item-btn");
+    deleteBtn.innerText = "";
+    deleteBtn.classList.add("del-btn");
     if (!todo.completed) deleteBtn.style.display = "none";
+
+
+    const editBtn = document.createElement("button");
+     editBtn.type = "button";
+     editBtn.title = "edit task";
+      editBtn.innerHTML = "";
+    editBtn.classList.add('edit-btn');
+      editBtn.addEventListener("click", () => {
+        editTodoItem(todo);
+      });
 
     completeBtn.addEventListener("click", () => {
       todo.completed = true;
@@ -45,7 +57,7 @@ export const toDoContainer = document.querySelector(".toDoContainer");
       }
     });
 
-    itemContainer.append(item, completeBtn, deleteBtn);
+    itemContainer.append(item,editBtn, completeBtn, deleteBtn, );
     toDoContainer.append(itemContainer);
   }
 };

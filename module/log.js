@@ -1,6 +1,6 @@
 import { renderTodos, toDoContainer }from "./renderTodos.js";
 import { userDisplay } from "./accountName.js";
-import addItem from "./addItem.js";
+import {addItem} from "./addItem.js";
 
 export let todos = [];
 export let storageKey = "";
