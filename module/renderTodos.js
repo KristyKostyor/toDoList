@@ -26,7 +26,14 @@ export const toDoContainer = document.querySelector(".toDoContainer");
     if (!todo.completed) deleteBtn.style.display = "none";
 
 
- 
+    const editBtn = document.createElement("button");
+     editBtn.type = "button";
+     editBtn.title = "edit task";
+      editBtn.innerHTML = "";
+    editBtn.classList.add('edit-btn');
+      editBtn.addEventListener("click", () => {
+        editTodoItem(todo);
+      });
 
     completeBtn.addEventListener("click", () => {
       todo.completed = true;
